@@ -1,21 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", ()=>{
     const buttons = document.querySelectorAll(".num");
-    const submitBtn = document.querySelector(".submit");
-    let selectedValue = 0;
+    const submit = document.querySelector(".submit");
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            buttons.forEach(b => b.classList.remove("active"));
+    let rating = 0;
+    
+    buttons.forEach(btn =>{
+        btn.addEventListener("click", () =>{
+            buttons.forEach(btn => btn.classList.remove("active"));
+            rating = btn.textContent;
             btn.classList.add("active");
-            selectedValue = btn.dataset.value;
-        });
+        })
     });
 
-    submitBtn.addEventListener("click",() =>{
-        if (selectedValue) {
-            window.location.href = `thank-you.html?=${selectedValue}`;
-        } else {
-            console.log("Please choose a rating first 🙂");
+    submit.addEventListener("click", (e)=>{
+        e.preventDefault();
+        if(rating){
+            window.location.href = `./thank-you.html?rating=${rating}`;
+        } else{
+            alert(`please choose a grade`)
         }
-    })
-})
+    });
+});

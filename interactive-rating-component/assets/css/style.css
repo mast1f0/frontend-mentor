@@ -130,3 +130,9 @@ button.active {
     padding-block: 15px;
     width: 100%;
 }
+
+@media screen and (width < 768px) {
+    .card{
+        margin-inline: 10%;
+    }
+}

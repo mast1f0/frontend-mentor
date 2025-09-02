@@ -1,4 +1,6 @@
-const params = new URLSearchParams();
-const rating = params.get('rating');
+const params = new URLSearchParams(window.location.search);
+const rating = params.get("rating");
 
-document.getElementById('.result').textContent = `You chosen ${rating}`;
+if(rating){
+    document.getElementById('result').textContent = `You selected ${rating} out of 5`;
+}
