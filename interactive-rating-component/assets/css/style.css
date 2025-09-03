@@ -10,6 +10,24 @@
     font-style: italic;
 }
 
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0); /* Starting position */
+  }
+  25% {
+    transform: translate(5px, 0); /* Move right */
+  }
+  50% {
+    transform: translate(-5px, 0); /* Move left */
+  }
+  75% {
+    transform: translate(5px, 0); /* Move right again */
+  }
+  100% {
+    transform: translate(0, 0); /* Return to original position */
+  }
+}
 :root{
 
     --White: hsl(0, 100%, 100%);
