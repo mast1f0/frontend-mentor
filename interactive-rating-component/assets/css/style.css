@@ -100,6 +100,14 @@ p{
     padding-bottom: 15px;
 }
 
+.button-group.error{
+    animation: shake 0.3s;
+}
+
+.button-group.error .num {
+    border: 2px solid red;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -133,6 +141,13 @@ button.active {
 
 @media screen and (width < 768px) {
     .card{
-        margin-inline: 10%;
+        margin-inline: auto;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .button-group{
+        justify-content: center;
+        gap: 10px;
     }
 }

@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             buttons.forEach(btn => btn.classList.remove("active"));
             rating = btn.textContent;
             btn.classList.add("active");
+            document.querySelector(".button-group").classList.remove("error");
+
         })
     });
 
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if(rating){
             window.location.href = `./thank-you.html?rating=${rating}`;
         } else{
-            alert(`please choose a grade`)
+            document.querySelector(".button-group").classList.add("error");
         }
     });
 });
